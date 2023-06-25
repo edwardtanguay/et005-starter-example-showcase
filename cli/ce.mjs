@@ -8,7 +8,7 @@ const createFile = (pathAndFileName, content) => {
 
 const idCode = process.argv[2];
 
-if (name === undefined) {
+if (idCode === undefined) {
 	console.log('SCRIPT: ce');
 	console.log('NAME: create example');
 	console.log('-------------------------');
@@ -32,6 +32,23 @@ export const ${idCode} = () => {
 		<div class="ball">the ball</div>	
 	\`;
 	return wrapAsExample('${idCode}', html, description);
+}
+	`);
+
+	// create style file
+	createFile(`./src/examples/${idCode}.scss`,`
+.${idCode} {
+	.ball {
+		width: 6rem;
+		height: 6rem;
+		background-color: navy;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		padding: 2rem;
+		font-family: verdana;
+		font-size: 1.2rem;
+	}
 }
 	`);
 }
