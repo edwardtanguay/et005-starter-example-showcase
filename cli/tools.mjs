@@ -2,13 +2,11 @@ import fs from 'fs';
 import * as tools from './tools.mjs';
 
 export const createFile = (pathAndFileName, content) => {
-	(async () => {
-		fs.writeFile(pathAndFileName, content.trim(), () => {});
-	})();
+	fs.writeFileSync(pathAndFileName, content.trim(), () => {});
 };
 
 export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
-	const html = fs.readFile(pathAndFileName, 'utf8', (err, content) => {
+	const html = fs.readFileSync(pathAndFileName, 'utf8', (err, content) => {
 		if (err) {
 			console.log(err);
 		} else {
@@ -111,4 +109,4 @@ export const trimBeginningLinesOfBlanks = (lines) => {
 export const NEW_LINE = (numberOfNewLines = 1) => {
 	const endOfLine = '\n';
 	return endOfLine.repeat(numberOfNewLines);
-}
+};
