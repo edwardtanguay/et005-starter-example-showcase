@@ -1,6 +1,8 @@
 import './example_german_states.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 
+const description = 'This example uses <code>forEach()</code> to loop through an array of German state names, displaying each in a circle that is animated on hover.';
+
 export const example_german_states = () => {
 	let html = '';
 
@@ -29,5 +31,5 @@ export const example_german_states = () => {
 	})
 	html += '</div>'; 
 	
-	return wrapAsExample('example_german_states', html);
+	return wrapAsExample('example_german_states', html, description);
 }
