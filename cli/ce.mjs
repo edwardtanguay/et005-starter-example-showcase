@@ -9,7 +9,7 @@ const createFile = (pathAndFileName, content) => {
 const name = process.argv[2];
 
 if (name === undefined) {
-	console.log('SCRIPT: cp');
+	console.log('SCRIPT: ce');
 	console.log('NAME: create example');
 	console.log('-------------------------');
 	console.log('EXAMPLE: npm run ce example_animated_dropdown');
