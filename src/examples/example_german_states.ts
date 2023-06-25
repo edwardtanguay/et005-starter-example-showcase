@@ -1,7 +1,7 @@
-import './example_red_ball.scss';
+import './example_german_states.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 
-export const example_red_ball = () => {
+export const example_german_states = () => {
 	let html = '';
 
 	const states = [
@@ -29,5 +29,5 @@ export const example_red_ball = () => {
 	})
 	html += '</div>'; 
 	
-	return wrapAsExample('example_red_ball', html);
+	return wrapAsExample('example_german_states', html);
 }
