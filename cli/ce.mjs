@@ -49,5 +49,5 @@ export const ${idCode} = () => {
 	// register component in main.ts
 ;
 	tools.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCode} } from './examples/${idCode}';`);
-	// tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{${idCode}()\}`);
+	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{${idCode}()\}`);
 }
