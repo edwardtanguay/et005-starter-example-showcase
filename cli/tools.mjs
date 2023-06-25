@@ -2,7 +2,7 @@ import fs from 'fs';
 import * as tools from './tools.mjs';
 
 export const createFile = (pathAndFileName, content) => {
-	fs.writeFileSync(pathAndFileName, content.trim(), () => {});
+	fs.writeFileSync(pathAndFileName, content.trim());
 };
 
 export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
