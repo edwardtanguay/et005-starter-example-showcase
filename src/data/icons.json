@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Profile",
+    "fontAwesomeClass": "fa-user"
+  },
+  {
+    "name": "Mail",
+    "fontAwesomeClass": "fa-envelope-o"
+  },
+  {
+    "name": "Videos",
+    "fontAwesomeClass": "fa-video-camera"
+  },
+  {
+    "name": "Travel",
+    "fontAwesomeClass": "fa-car"
+  },
+  {
+    "name": "Events",
+    "fontAwesomeClass": "fa-calendar"
+  },
+  {
+    "name": "Sports",
+    "fontAwesomeClass": "fa-futbol-o"
+  },
+  {
+    "name": "Restaurants",
+    "fontAwesomeClass": "fa-cutlery"
+  },
+  {
+    "name": "Search",
+    "fontAwesomeClass": "fa-search"
+  }
+]
