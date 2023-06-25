@@ -1,0 +1,31 @@
+.example_sunken_buttons {
+	.buttons-container {
+		padding: 1rem 0 0 1rem;
+	}
+
+	button {
+		overflow: hidden;
+		width: 96px;
+		height: 96px;
+		background-color: #111;
+		border: none;
+		border-radius: 6px;
+		margin-right: .8rem;
+		color: #6b696b;
+		font-weight: 700;
+		line-height: 1;
+		text-transform: uppercase;
+		transition: .3s;
+	}
+
+	button img {
+		height: 12px;
+	}
+
+	button:hover {
+		cursor: pointer;
+		box-shadow: inset 2px 2px 18px #000, 5px 5px 8px #444;
+		color: rgb(184, 184, 83);
+		background-color: black;
+	}
+}
