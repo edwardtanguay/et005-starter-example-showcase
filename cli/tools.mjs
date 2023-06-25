@@ -6,7 +6,7 @@ export const createFile = (pathAndFileName, content) => {
 };
 
 export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
-	const html = fs.readFileSync(pathAndFileName);
+	const content = fs.readFileSync(pathAndFileName, {encoding: 'utf8'});
 	const lines = tools.convertStringBlockToLines(content);
 	let newLines = [];
 	let lineNumber = 1;
