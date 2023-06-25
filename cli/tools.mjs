@@ -33,7 +33,7 @@ export const convertLinesToStringBlock = (lines) => {
 	for (const line of lines) {
 		r += line;
 		if (index != lines.length - 1) {
-			r += qstr.NEW_LINE();
+			r += tools.NEW_LINE();
 		}
 		index++;
 	}
@@ -102,3 +102,8 @@ export const trimBeginningLinesOfBlanks = (lines) => {
 	});
 	return newLines;
 };
+
+export const NEW_LINE = (numberOfNewLines = 1) => {
+	const endOfLine = '\n';
+	return endOfLine.repeat(numberOfNewLines);
+}
