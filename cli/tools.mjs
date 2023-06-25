@@ -6,29 +6,23 @@ export const createFile = (pathAndFileName, content) => {
 };
 
 export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
-	const html = fs.readFileSync(pathAndFileName, 'utf8', (err, content) => {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log(content);
-			// const lines = tools.convertStringBlockToLines(content);
-			// let newLines = [];
-			// let lineNumber = 1;
-			// for (const line of lines) {
-			// 	if (lineNumber === 1 && marker === '@@FIRSTLINE') {
-			// 		newLines.push(additionalLine);
-			// 	}
-			// 	const newLine = line;
-			// 	newLines.push(newLine);
-			// 	if (newLine.includes(marker)) {
-			// 		newLines.push(additionalLine);
-			// 	}
-			// 	lineNumber++;
-			// }
-			// const newContent = convertLinesToStringBlock(newLines);
-			// tools.createFile(pathAndFileName, newContent);
+	const html = fs.readFileSync(pathAndFileName);
+	const lines = tools.convertStringBlockToLines(content);
+	let newLines = [];
+	let lineNumber = 1;
+	for (const line of lines) {
+		if (lineNumber === 1 && marker === '@@FIRSTLINE') {
+			newLines.push(additionalLine);
 		}
-	});
+		const newLine = line;
+		newLines.push(newLine);
+		if (newLine.includes(marker)) {
+			newLines.push(additionalLine);
+		}
+		lineNumber++;
+	}
+	const newContent = convertLinesToStringBlock(newLines);
+	tools.createFile(pathAndFileName, newContent);
 };
 
 export const convertLinesToStringBlock = (lines) => {
