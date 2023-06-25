@@ -45,4 +45,7 @@ export const ${idCode} = () => {
 	}
 }
 	`);
+
+	// register component in main.ts
+	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{${idCode}()\}`);
 }
