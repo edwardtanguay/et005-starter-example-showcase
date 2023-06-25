@@ -14,8 +14,9 @@ export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
 		} else {
 			const lines = tools.convertStringBlockToLines(content);
 			let newLines = [];
+			let line = 1;
 			for (const line of lines) {
-				if (marker === '@@FIRSTLINE') {
+				if (line === 1 && marker === '@@FIRSTLINE') {
 					newLines.push(additionalLine);
 				}
 				const newLine = line;
@@ -23,6 +24,7 @@ export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
 				if (newLine.includes(marker)) {
 					newLines.push(additionalLine);
 				}
+				line++;
 			}
 			const newContent = convertLinesToStringBlock(newLines);
 			tools.createFile(pathAndFileName, newContent);
