@@ -1,0 +1,13 @@
+.example_blue_ball {
+	.ball {
+		width: 6rem;
+		height: 6rem;
+		background-color: navy;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		padding: 2rem;
+		font-family: verdana;
+		font-size: 1.2rem;
+	}
+}
