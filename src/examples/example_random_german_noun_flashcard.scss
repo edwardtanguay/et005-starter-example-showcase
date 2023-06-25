@@ -1,13 +1,43 @@
+$color1: #264653;
+$color2: #e9c46a;
+
 .example_random_german_noun_flashcard {
-	.ball {
-		width: 6rem;
-		height: 6rem;
-		background-color: #555;
-		border-radius: 50%;
+
+	.flashcard {
+		position: relative;
+		width: 13rem;
+		height: 7rem;
+		top: -2.5rem;
+		left: -2rem;
+	}
+
+	.flashcard .front,
+	.back {
+		width: 13rem;
+		height: 7rem;
+		position: absolute;
+		top: 3rem;
+		left: 3rem;
 		display: grid;
 		place-items: center;
-		padding: 2rem;
-		font-family: verdana;
+		box-shadow: 3px 3px 12px #555;
 		font-size: 1.2rem;
+		border-radius: .5rem;
+	}
+
+	.flashcard .back {
+		background-color: $color2;
+		color: $color1;
+	}
+
+	.flashcard .front {
+		background-color: $color1;
+		color: $color2;
+		transition: .5s;
+		z-index: 2;
+	}
+
+	.front:hover {
+		transform: translateY(6rem);
 	}
 }
