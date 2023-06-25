@@ -6,7 +6,7 @@ const createFile = (pathAndFileName, content) => {
 	})();
 };
 
-const name = process.argv[2];
+const idCode = process.argv[2];
 
 if (name === undefined) {
 	console.log('SCRIPT: ce');
@@ -20,13 +20,18 @@ if (name === undefined) {
 } else {
 
 	// create code file
-	createFile(`./src/examples/${name}.ts`,`
-export const Page${name} = () => {
-	return (
-		<div className="page page${name}">
-			<p>This is the ${name} page.</p>
-		</div>
-	);
-};
+	createFile(`./src/examples/${idCode}.ts`,`
+import './${idCode}.scss';
+import { wrapAsExample } from '../components/wrapAsExample';
+
+const description =  '';
+
+export const ${idCode} = () => {
+	let html = '';
+	html += \`
+		<div class="ball">the ball</div>	
+	\`;
+	return wrapAsExample('${idCode}', html, description);
+}
 	`);
 }
