@@ -7,7 +7,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 <h1>Example Showcase</h1>
 <div class="examples">
 ${example_random_german_noun_flashcard()}
-${example_blue_ball()}
 ${example_german_states()}
+${example_blue_ball()}
 </div>
 `;

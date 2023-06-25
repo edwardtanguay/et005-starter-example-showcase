@@ -13,7 +13,7 @@ export const example_german_states = () => {
 		"Brandenburg",
 		"Bremen",
 		"Hamburg",
-		"Hesse",
+		"Hessen",
 		"Lower Saxony",
 		"Mecklenburg-Vorpommern",
 		"North Rhine-Westphalia",
