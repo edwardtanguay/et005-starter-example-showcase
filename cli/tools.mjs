@@ -10,22 +10,23 @@ export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
 		if (err) {
 			console.log(err);
 		} else {
-			const lines = tools.convertStringBlockToLines(content);
-			let newLines = [];
-			let lineNumber = 1;
-			for (const line of lines) {
-				if (lineNumber === 1 && marker === '@@FIRSTLINE') {
-					newLines.push(additionalLine);
-				}
-				const newLine = line;
-				newLines.push(newLine);
-				if (newLine.includes(marker)) {
-					newLines.push(additionalLine);
-				}
-				lineNumber++;
-			}
-			const newContent = convertLinesToStringBlock(newLines);
-			tools.createFile(pathAndFileName, newContent);
+			console.log(content);
+			// const lines = tools.convertStringBlockToLines(content);
+			// let newLines = [];
+			// let lineNumber = 1;
+			// for (const line of lines) {
+			// 	if (lineNumber === 1 && marker === '@@FIRSTLINE') {
+			// 		newLines.push(additionalLine);
+			// 	}
+			// 	const newLine = line;
+			// 	newLines.push(newLine);
+			// 	if (newLine.includes(marker)) {
+			// 		newLines.push(additionalLine);
+			// 	}
+			// 	lineNumber++;
+			// }
+			// const newContent = convertLinesToStringBlock(newLines);
+			// tools.createFile(pathAndFileName, newContent);
 		}
 	});
 };
