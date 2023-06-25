@@ -11,11 +11,11 @@
 		border: none;
 		border-radius: 6px;
 		margin-right: .8rem;
-		color: #6b696b;
+		color: #777;
 		font-weight: 700;
 		line-height: 1;
 		text-transform: uppercase;
-		transition: .3s;
+		transition: box-shadow .3s;
 	}
 
 	button img {
@@ -26,6 +26,7 @@
 		cursor: pointer;
 		box-shadow: inset 2px 2px 18px #000, 5px 5px 8px #444;
 		color: rgb(184, 184, 83);
-		background-color: black;
+		background-color: #000;
+		border: 1px solid rgb(65, 65, 27);
 	}
 }
