@@ -15,6 +15,9 @@ export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
 			const lines = tools.convertStringBlockToLines(content);
 			let newLines = [];
 			for (const line of lines) {
+				if (marker === '@@FIRSTLINE') {
+					newLines.push(additionalLine);
+				}
 				const newLine = line;
 				newLines.push(newLine);
 				if (newLine.includes(marker)) {
