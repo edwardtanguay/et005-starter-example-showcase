@@ -29,7 +29,7 @@ const description =  '';
 export const ${idCode} = () => {
 	let html = '';
 	html += \`
-		<div class="ball">the ball</div>	
+		<div class="ball">example</div>	
 	\`;
 	return wrapAsExample('${idCode}', html, description);
 }
@@ -41,7 +41,7 @@ export const ${idCode} = () => {
 	.ball {
 		width: 6rem;
 		height: 6rem;
-		background-color: navy;
+		background-color: #555;
 		border-radius: 50%;
 		display: grid;
 		place-items: center;
