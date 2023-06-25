@@ -4,6 +4,7 @@
 		gap: .5rem;
 		flex-wrap: wrap;
 	}
+
 	.state {
 		width: 6rem;
 		height: 6rem;
@@ -16,5 +17,15 @@
 		font-size: .8rem;
 		text-align: center;
 		margin-bottom: .5rem;
+		transition: .2s;
+
+		&:hover {
+			font-weight: bold;
+			width: 7rem;
+			height: 7rem;
+			background-color: red;
+			cursor: pointer;
+			border: 2px solid #fff;
+		}
 	}
 }
