@@ -4,7 +4,7 @@ import './styles/main.scss';
 
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
-<h1>Examples</h1>
+<h1>Example Showcase</h1>
 <div class="examples">
 	${example_blue_ball()}
 	${example_red_ball()}

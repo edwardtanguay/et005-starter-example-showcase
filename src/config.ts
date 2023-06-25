@@ -1,0 +1,1 @@
+export const githubRepositoryUrl = 'https://github.com/edwardtanguay/et005-starter-example-showcase';
