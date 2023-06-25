@@ -33,8 +33,8 @@ export const ${idCode} = () => {
 	tools.createFile(`./src/examples/${idCode}.scss`,`
 .${idCode} {
 	.ball {
-		width: 6rem;
-		height: 6rem;
+		width: 9rem;
+		height: 9rem;
 		background-color: #555;
 		border-radius: 50%;
 		display: grid;
