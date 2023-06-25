@@ -5,7 +5,7 @@ import { example_german_states } from './examples/example_german_states';
 import './styles/main.scss';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
-<h1>Example Showcase</h1>
+<h1>JavaScript/CSS Showcase</h1>
 <div class="examples">
 ${example_sunken_buttons()}
 ${example_random_german_noun_flashcard()}
