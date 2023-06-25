@@ -1,10 +1,4 @@
-import fs from 'fs';
-
-const createFile = (pathAndFileName, content) => {
-	(async () => {
-		fs.writeFile(pathAndFileName, content.trim(), () => {});
-	})();
-};
+import * as tools from './tools.mjs';
 
 const idCode = process.argv[2];
 
@@ -20,7 +14,7 @@ if (idCode === undefined) {
 } else {
 
 	// create code file
-	createFile(`./src/examples/${idCode}.ts`,`
+	tools.createFile(`./src/examples/${idCode}.ts`,`
 import './${idCode}.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 
@@ -36,7 +30,7 @@ export const ${idCode} = () => {
 	`);
 
 	// create style file
-	createFile(`./src/examples/${idCode}.scss`,`
+	tools.createFile(`./src/examples/${idCode}.scss`,`
 .${idCode} {
 	.ball {
 		width: 6rem;
