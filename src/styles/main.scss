@@ -19,6 +19,14 @@ body {
 		margin-bottom: 1rem;
 	}
 
+	.btnBackToHome {
+		margin-bottom: 1rem;
+		padding: .2rem .5rem;
+		background-color: $main-link-color;
+		border-radius: .5rem;
+		opacity: .8;
+	}
+
 	.examples {
 		display: flex;
 		flex-direction: column;

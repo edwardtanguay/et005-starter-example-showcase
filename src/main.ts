@@ -5,25 +5,28 @@ import { example_german_states } from './examples/example_german_states';
 import './styles/main.scss';
 import * as tools from './tools';
 
+const currentPageIdCode = tools.getCurrentPageIdCode();
 
 const displayComponent = (component: () => void, idCode: string) => {
-	const currentPageIdCode = tools.getCurrentPageIdCode(); 
-	console.log(currentPageIdCode);
 	if (currentPageIdCode === '') {
 		return component();
 	} else {
 		if (currentPageIdCode === idCode) {
-		return component();
+			console.log('in');
+			return component();
+		} else {
+			return '';
 		}
 	}
 }
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 <h1>HTML-CSS-JavaScript Showcase</h1>
+${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : '' }
 <div class="examples">
-${displayComponent(example_highlight_hover_buttons, 'example_highlight_hover_buttons')}
-${example_random_german_noun_flashcard()}
-${example_german_states()}
-${example_blue_ball()}
+${displayComponent(example_highlight_hover_buttons, 'example-highlight-hover-buttons')}
+${displayComponent(example_random_german_noun_flashcard, 'example-random-german-noun-flashcard')}
+${displayComponent(example_german_states, 'example-german-states')}
+${displayComponent(example_blue_ball, 'example-blue-ball')}
 </div>
 `;

@@ -7,8 +7,6 @@ $color2: #e9c46a;
 		position: relative;
 		width: 13rem;
 		height: 7rem;
-		top: -2.5rem;
-		left: -2rem;
 	}
 
 	.flashcard .front,
@@ -23,6 +21,8 @@ $color2: #e9c46a;
 		box-shadow: 3px 3px 12px #555;
 		font-size: 1.2rem;
 		border-radius: .5rem;
+		top: 0;
+		left: 0;
 	}
 
 	.flashcard .back {
