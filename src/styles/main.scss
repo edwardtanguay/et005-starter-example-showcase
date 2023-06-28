@@ -3,9 +3,9 @@ $main-text-color: #777;
 $main-link-color: rgb(218, 218, 172);
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
@@ -44,6 +44,12 @@ body {
 				font-size: 1.3rem;
 			}
 
+			.singleExample {
+				font-size: 2rem;
+				color: #bbb;
+				text-shadow: 0 0 5px #888;
+			}
+
 			.description {
 				color: $main-text-color;
 				margin-top: -.5rem;
@@ -74,6 +80,7 @@ body {
 				a {
 					text-decoration: none;
 					color: $main-link-color;
+
 					&:hover {
 						color: rgb(212, 212, 91);
 					}
