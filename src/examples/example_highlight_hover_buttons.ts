@@ -1,4 +1,4 @@
-import './example_sunken_buttons.scss';
+import './example_highlight_hover_buttons.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 import icons from '../data/icons.json';
 import * as tools from '../tools';
@@ -7,7 +7,7 @@ const description = '';
 
 tools.shuffle(icons);
 
-export const example_sunken_buttons = () => {
+export const example_highlight_hover_buttons = () => {
 	let html = '';
 	html += `<section class="buttons-container">`;
 
@@ -16,5 +16,5 @@ export const example_sunken_buttons = () => {
 	}
 
 	html += `</section>`;
-	return wrapAsExample('example_sunken_buttons', html, description);
+	return wrapAsExample('example_highlight_hover_buttons', html, description);
 }
