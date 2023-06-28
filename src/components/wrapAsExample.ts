@@ -11,8 +11,10 @@ export const wrapAsExample = (idCode: string, html: string, description = '') =>
 		<legend>${idCode}</legend>
 		${html_description}
 		<div class="links">
-			<div>code: <a target="_blank" href=${codeUrl}>${idCode}.ts</a></div>
-			<div>styles: <a target="_blank" href=${stylesUrl}>${idCode}.scss</a></div>
+			<div><i class="fa fa-github" aria-hidden="true"></i> <a target="_blank" href=${codeUrl}>${idCode}.ts</a></div>
+			<div><i class="fa fa-github" aria-hidden="true"></i> <a target="_blank" href=${stylesUrl}>${idCode}.scss</a></div>
+			<div class="permalink"><i class="fa fa-link" aria-hidden="true"></i>
+ <a href="nnn">${idCode}</a></div>
 		</div>
 		${html}	
 	</fieldset>
