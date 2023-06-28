@@ -17,3 +17,7 @@ export const shuffle = (items: any[]) => {
 export const createUrlCodeFromIdCode = (idCode: string) => {
 	return idCode.replaceAll('_', '-');
 }
+
+export const getRandomNumberBetween = (min: number, max: number) => {
+	return Math.floor(Math.random() * max) + min;
+}
