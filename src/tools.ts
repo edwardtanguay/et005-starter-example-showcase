@@ -13,3 +13,7 @@ export const shuffle = (items: any[]) => {
 		items[j] = temp;
 	}
 }
+
+export const createUrlCodeFromIdCode = (idCode: string) => {
+	return idCode.replaceAll('_', '-');
+}
