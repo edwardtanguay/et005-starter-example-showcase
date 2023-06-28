@@ -16,7 +16,8 @@ export const wrapAsExample = (idCode: string, html: string, description = '') =>
 		<div class="links">
 			<div><i class="fa fa-github" aria-hidden="true"></i> <a target="_blank" href=${codeUrl}>${idCode}.ts</a></div>
 			<div><i class="fa fa-github" aria-hidden="true"></i> <a target="_blank" href=${stylesUrl}>${idCode}.scss</a></div>
-			<div class="permalink"><i class="fa fa-link" aria-hidden="true"></i> <a href="${permalink}">permalink</a></div></div>
+			<div class="permalink"><i class="fa fa-link" aria-hidden="true"></i> <a href="${permalink}">permalink</a></div>
+		</div>
 		${html}	
 	</fieldset>
 	`;
