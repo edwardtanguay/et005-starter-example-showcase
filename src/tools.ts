@@ -21,3 +21,15 @@ export const createUrlCodeFromIdCode = (idCode: string) => {
 export const getRandomNumberBetween = (min: number, max: number) => {
 	return Math.floor(Math.random() * max) + min;
 }
+
+import * as tools from './tools';
+
+export const getCurrentUrl = () => {
+	return window.location.href;
+}
+
+export const getCurrentPageIdCode = () => {
+	const url = tools.getCurrentUrl();
+	const parts = url.split('/');
+	return parts[parts.length - 1];
+}
