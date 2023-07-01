@@ -1,4 +1,4 @@
-import * as tools from './tools.js';
+import * as tools from '../share/tools.js';
 
 const idCodeSnakeCase = process.argv[2];
 

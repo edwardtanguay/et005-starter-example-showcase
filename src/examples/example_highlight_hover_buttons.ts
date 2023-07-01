@@ -1,7 +1,7 @@
 import './example_highlight_hover_buttons.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 import _icons from '../data/icons.json';
-import * as tools from '../../share/toolsFrontend';
+import * as tools from '../../share/tools';
 
 const description = '';
 

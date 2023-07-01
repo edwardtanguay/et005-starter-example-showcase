@@ -23,6 +23,6 @@
   },
   "include": [
     "src",
-    "share/toolsFrontend.ts"
+    "share/tools.ts"
   ]
 }

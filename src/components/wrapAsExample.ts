@@ -1,5 +1,5 @@
 import * as config from '../config';
-import * as tools from '../../share/toolsFrontend';
+import * as tools from '../../share/tools';
 
 export const wrapAsExample = (idCode: string, html: string, description = '') => {
 	const html_description = description.trim() === '' ? '' : `<div class="description">${description}</div>`;
