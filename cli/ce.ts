@@ -3,7 +3,7 @@ import * as tools from './tools.js';
 const idCodeSnakeCase = process.argv[2];
 
 const idCodeKebabCase = tools.convertSnakeCaseToKebabCase(idCodeSnakeCase);
-console.log(idCodeKebabCase);
+console.log('idCodeKebabCase', idCodeKebabCase);
 
 if (idCodeSnakeCase === undefined) {
 	console.log('SCRIPT: ce');

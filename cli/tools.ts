@@ -107,5 +107,6 @@ export const NEW_LINE = (numberOfNewLines = 1) => {
 };
 
 export const convertSnakeCaseToKebabCase = (text:string) => {
+	console.log('text', text);
 	return text.replaceAll('_', '-');
 }

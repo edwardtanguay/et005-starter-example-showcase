@@ -4,24 +4,29 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "run-p backend frontend",
+    "backend": "nodemon",
+    "frontend": "vite",
+    "buildBackend": "tsc -p ./cli/tsconfig.json",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "ce": "node cli/ce.js"
+    "ce": "node distBackend/ce.js"
   },
   "nodemonConfig": {
     "watch": [
-      "src"
+      "cli"
     ],
     "ext": "ts",
-    "exec": "npm run build && node dist/server.js"
+    "exec": "npm run buildBackend"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
+    "nodemon": "^2.0.22",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   },
   "dependencies": {
+    "npm-run-all": "^4.1.5",
     "sass": "^1.62.1"
   }
 }
