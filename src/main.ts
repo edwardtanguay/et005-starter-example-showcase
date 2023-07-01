@@ -8,19 +8,19 @@ import * as tools from './tools';
 const currentPageIdCode = tools.getCurrentPageIdCode();
 
 const displayComponent = (component: () => void, idCode: string) => {
-if (currentPageIdCode === '') {
-return component();
-} else {
-if (currentPageIdCode === idCode) {
-return component();
-} else {
-return '';
-}
-}
+	if (currentPageIdCode === '') {
+		return component();
+	} else {
+		if (currentPageIdCode === idCode) {
+			return component();
+		} else {
+			return '';
+		}
+	}
 }
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
-<h1>HTML-CSS-JavaScript Showcase</h1>
+<h1>HTML-CSS-JavaScript Showcase 2.0</h1>
 ${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : ''}
 <div class="examples">
 ${displayComponent(example_highlight_hover_buttons, 'example-highlight-hover-buttons')}
