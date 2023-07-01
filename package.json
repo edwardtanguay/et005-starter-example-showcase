@@ -10,7 +10,7 @@
     "buildBackend": "tsc -p ./cli/tsconfig.json",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "ce": "node distBackend/ce.js"
+    "ce": "node distBackend/cli/ce.js"
   },
   "nodemonConfig": {
     "watch": [

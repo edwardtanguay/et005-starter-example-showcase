@@ -22,7 +22,7 @@ export const getRandomNumberBetween = (min: number, max: number) => {
 	return Math.floor(Math.random() * max) + min;
 }
 
-import * as tools from './tools';
+import * as tools from './toolsFrontend.js';
 
 export const getCurrentUrl = () => {
 	return window.location.href;

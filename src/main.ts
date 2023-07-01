@@ -3,7 +3,7 @@ import { example_random_german_noun_flashcard } from './examples/example_random_
 import { example_blue_ball } from './examples/example_blue_ball';
 import { example_german_states } from './examples/example_german_states';
 import './styles/main.scss';
-import * as tools from './tools';
+import * as tools from '../share/toolsFrontend';
 
 const currentPageIdCode = tools.getCurrentPageIdCode();
 

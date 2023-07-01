@@ -6,5 +6,5 @@
 		"sourceMap": true,
 		"outDir": "../distBackend",
 	},
-	"include": ["../cli"]
+	"include": ["../cli", "../share"]
 }

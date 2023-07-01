@@ -2,9 +2,6 @@ import * as tools from './tools.js';
 
 const idCodeSnakeCase = process.argv[2];
 
-const idCodeKebabCase = tools.convertSnakeCaseToKebabCase(idCodeSnakeCase);
-console.log('idCodeKebabCase', idCodeKebabCase);
-
 if (idCodeSnakeCase === undefined) {
 	console.log('SCRIPT: ce');
 	console.log('NAME: create example');
@@ -15,6 +12,7 @@ if (idCodeSnakeCase === undefined) {
 	console.log('/scr/examples/example_animated_dropdown.scss');
 	process.exit();
 } else {
+	const idCodeKebabCase = tools.convertSnakeCaseToKebabCase(idCodeSnakeCase);
 
 	// create code file
 	tools.createFile(`./src/examples/${idCodeSnakeCase}.ts`, `
@@ -54,5 +52,5 @@ export const ${idCodeSnakeCase} = () => {
 	tools.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCodeSnakeCase} } from './examples/${idCodeSnakeCase}';`);
 	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{displayComponent(${idCodeSnakeCase}, '${idCodeKebabCase}')\}`);
 
-// ${displayComponent(example_test, 'example-test')}
+	// ${displayComponent(example_test, 'example-test')}
 }
