@@ -33,3 +33,12 @@ export const getCurrentPageIdCode = () => {
 	const parts = url.split('/');
 	return parts[parts.length - 1];
 }
+
+export const getCurrentEnvironment = () => {
+	const currentUrl = tools.getCurrentUrl();
+	if (currentUrl.includes('//localhost') || currentUrl.includes('//127.0.0.1')) {
+		return 'development';
+	} else {
+		return 'production';
+	}
+}
