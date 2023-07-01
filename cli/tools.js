@@ -1,12 +1,12 @@
 import fs from 'fs';
-import * as tools from './tools.mjs';
+import * as tools from './tools.js';
 
 export const createFile = (pathAndFileName, content) => {
 	fs.writeFileSync(pathAndFileName, content.trim());
 };
 
 export const addLineInFile = (pathAndFileName, marker, additionalLine) => {
-	const content = fs.readFileSync(pathAndFileName, {encoding: 'utf8'});
+	const content = fs.readFileSync(pathAndFileName, { encoding: 'utf8' });
 	const lines = tools.convertStringBlockToLines(content);
 	let newLines = [];
 	let lineNumber = 1;

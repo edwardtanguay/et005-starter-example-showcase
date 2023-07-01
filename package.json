@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "ce": "node cli/ce.mjs"
+    "ce": "node cli/ce.js"
   },
   "devDependencies": {
     "typescript": "^5.0.2",

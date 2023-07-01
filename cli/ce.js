@@ -1,4 +1,4 @@
-import * as tools from './tools.mjs';
+import * as tools from './tools.js';
 
 const idCode = process.argv[2];
 
@@ -14,7 +14,7 @@ if (idCode === undefined) {
 } else {
 
 	// create code file
-	tools.createFile(`./src/examples/${idCode}.ts`,`
+	tools.createFile(`./src/examples/${idCode}.ts`, `
 import './${idCode}.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 
@@ -30,7 +30,7 @@ export const ${idCode} = () => {
 	`);
 
 	// create style file
-	tools.createFile(`./src/examples/${idCode}.scss`,`
+	tools.createFile(`./src/examples/${idCode}.scss`, `
 .${idCode} {
 	.ball {
 		width: 9rem;
@@ -47,7 +47,7 @@ export const ${idCode} = () => {
 	`);
 
 	// register component in main.ts
-;
+	;
 	tools.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCode} } from './examples/${idCode}';`);
 	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{${idCode}()\}`);
 }
