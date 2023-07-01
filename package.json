@@ -9,7 +9,15 @@
     "preview": "vite preview",
     "ce": "node cli/ce.js"
   },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "npm run build && node dist/server.js"
+  },
   "devDependencies": {
+    "@types/node": "^20.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   },
