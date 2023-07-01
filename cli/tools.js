@@ -105,3 +105,7 @@ export const NEW_LINE = (numberOfNewLines = 1) => {
 	const endOfLine = '\n';
 	return endOfLine.repeat(numberOfNewLines);
 };
+
+export const convertSnakeCaseToKebabCase = (text) => {
+	return text.replaceAll('_', '-');
+}

@@ -1,8 +1,11 @@
 import * as tools from './tools.js';
 
-const idCode = process.argv[2];
+const idCodeSnakeCase = process.argv[2];
 
-if (idCode === undefined) {
+const idCodeKebabCase = tools.convertSnakeCaseToKebabCase(idCodeSnakeCase);
+console.log(idCodeKebabCase);
+
+if (idCodeSnakeCase === undefined) {
 	console.log('SCRIPT: ce');
 	console.log('NAME: create example');
 	console.log('-------------------------');
@@ -14,24 +17,24 @@ if (idCode === undefined) {
 } else {
 
 	// create code file
-	tools.createFile(`./src/examples/${idCode}.ts`, `
-import './${idCode}.scss';
+	tools.createFile(`./src/examples/${idCodeSnakeCase}.ts`, `
+import './${idCodeSnakeCase}.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 
 const description =  '';
 
-export const ${idCode} = () => {
+export const ${idCodeSnakeCase} = () => {
 	let html = '';
 	html += \`
 		<div class="ball">example</div>	
 	\`;
-	return wrapAsExample('${idCode}', html, description);
+	return wrapAsExample('${idCodeSnakeCase}', html, description);
 }
 	`);
 
 	// create style file
-	tools.createFile(`./src/examples/${idCode}.scss`, `
-.${idCode} {
+	tools.createFile(`./src/examples/${idCodeSnakeCase}.scss`, `
+.${idCodeSnakeCase} {
 	.ball {
 		width: 9rem;
 		height: 9rem;
@@ -48,6 +51,8 @@ export const ${idCode} = () => {
 
 	// register component in main.ts
 	;
-	tools.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCode} } from './examples/${idCode}';`);
-	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{${idCode}()\}`);
+	tools.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCodeSnakeCase} } from './examples/${idCodeSnakeCase}';`);
+	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{displayComponent(${idCodeSnakeCase}, '${idCodeKebabCase}')\}`);
+
+// ${displayComponent(example_test, 'example-test')}
 }

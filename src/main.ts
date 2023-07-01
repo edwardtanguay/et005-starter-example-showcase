@@ -1,3 +1,5 @@
+import { example_test3 } from './examples/example_test3';
+import { example_test2 } from './examples/example_test2';
 import { example_test } from './examples/example_test';
 import { example_highlight_hover_buttons } from './examples/example_highlight_hover_buttons';
 import { example_random_german_noun_flashcard } from './examples/example_random_german_noun_flashcard';
@@ -9,22 +11,24 @@ import * as tools from './tools';
 const currentPageIdCode = tools.getCurrentPageIdCode();
 
 const displayComponent = (component: () => void, idCode: string) => {
-	if (currentPageIdCode === '') {
-		return component();
-	} else {
-		if (currentPageIdCode === idCode) {
-			return component();
-		} else {
-			return '';
-		}
-	}
+if (currentPageIdCode === '') {
+return component();
+} else {
+if (currentPageIdCode === idCode) {
+return component();
+} else {
+return '';
+}
+}
 }
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 <h1>HTML-CSS-JavaScript Showcase</h1>
 ${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : ''}
 <div class="examples">
-${example_test()}
+${displayComponent(example_test3, 'example-test3')}
+${displayComponent(example_test2, 'example-test2')}
+${displayComponent(example_test, 'example-test')}
 ${displayComponent(example_highlight_hover_buttons, 'example-highlight-hover-buttons')}
 ${displayComponent(example_random_german_noun_flashcard, 'example-random-german-noun-flashcard')}
 ${displayComponent(example_german_states, 'example-german-states')}

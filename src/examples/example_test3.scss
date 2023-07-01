@@ -1,0 +1,13 @@
+.example_test3 {
+	.ball {
+		width: 9rem;
+		height: 9rem;
+		background-color: #555;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		padding: 2rem;
+		font-family: verdana;
+		font-size: 1.2rem;
+	}
+}
