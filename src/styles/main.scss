@@ -14,9 +14,18 @@ body {
 	font-family: sans-serif;
 	padding: 2rem;
 
-	h1 {
-		color: rgb(204, 168, 101);
-		margin-bottom: 1rem;
+	header {
+		display: flex;
+		justify-content: space-between;
+
+		h1 {
+			color: rgb(204, 168, 101);
+			margin-bottom: 1rem;
+		}
+
+		.version {
+			color: #555;
+		}
 	}
 
 	.btnBackToHome {

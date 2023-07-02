@@ -21,7 +21,10 @@ const displayComponent = (component: () => void, idCode: string) => {
 }
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
-<h1>${apptools.getAppTitle()}</h1>
+<header>
+	<h1>${apptools.getAppTitle()}</h1>
+	<div class="version">Version 2.3</div>
+</header>
 ${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : ''}
 <div class="examples">
 ${displayComponent(example_highlight_hover_buttons, 'example-highlight-hover-buttons')}
