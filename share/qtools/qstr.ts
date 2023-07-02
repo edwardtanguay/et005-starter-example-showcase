@@ -1,6 +1,31 @@
 import * as qsys from './qsys.js';
 import * as qstr from './qstr.js';
 
+/**
+ * REPLACE ALL OCCURANCES IN A STRING:
+ *
+ * qstr.replaceAll("This is a tost.", "o", "e");
+ *
+ * "This is a test."
+ */
+export const replaceAll = (text: string, search: string, replace: string) => {
+	return text.split(search).join(replace);
+};
+
+export const isEmpty = (line: string) => {
+	if (line == undefined || line == null) {
+		return true;
+	} else {
+		line = line.toString();
+		if (line.trim() == '') {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+};
+
 export const convertLinesToStringBlock = (lines: string[]) => {
 	let r = '';
 	let index = 0;
@@ -26,20 +51,6 @@ export const convertStringBlockToLines = (stringBlock: string, trimLines = true)
 	}
 	roughLines = qstr.trimLinesOfEndBlanks(roughLines);
 	return roughLines;
-};
-
-export const isEmpty = (line: string) => {
-	if (line == undefined || line == null) {
-		return true;
-	} else {
-		line = line.toString();
-		if (line.trim() == '') {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 };
 
 export const trimAllLinesInLinesArray = (lines: string[]) => {
@@ -80,14 +91,3 @@ export const trimBeginningLinesOfBlanks = (lines: string[]) => {
 export const convertSnakeCaseToKebabCase = (text: string) => {
 	return qstr.replaceAll(text, '_', '-');
 }
-
-/**
- * REPLACE ALL OCCURANCES IN A STRING:
- *
- * qstr.replaceAll("This is a tost.", "o", "e");
- *
- * "This is a test."
- */
-export const replaceAll = (text: string, search: string, replace: string) => {
-	return text.split(search).join(replace);
-};
