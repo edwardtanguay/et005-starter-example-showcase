@@ -10,7 +10,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "ce": "node distBackend/cli/ce.js",
-    "test": "vitest --coverage"
+    "test": "vitest --ui",
+    "testcov": "vitest --coverage"
   },
   "nodemonConfig": {
     "watch": [

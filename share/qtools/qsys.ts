@@ -2,8 +2,12 @@ import * as qsys from './qsys';
 
 export const getCurrentPageIdCode = () => {
 	const url = qsys.getCurrentUrl();
-	const parts = url.split('/');
-	return parts[parts.length - 1];
+	if (url) {
+		const parts = url.split('/');
+		return parts[parts.length - 1];
+	} else {
+		return '';
+	}
 }
 
 export const getCurrentEnvironment = () => {
@@ -16,7 +20,11 @@ export const getCurrentEnvironment = () => {
 }
 
 export const getCurrentUrl = () => {
-	return window.location.href;
+	if (typeof window !== "undefined") {
+		return window.location.href;
+	} else {
+		return '';
+	}
 }
 
 export const createUrlCodeFromIdCode = (idCode: string) => {
