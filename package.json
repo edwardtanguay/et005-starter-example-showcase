@@ -10,7 +10,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "ce": "node distBackend/cli/ce.js",
-    "test": "vitest"
+    "test": "vitest --coverage"
   },
   "nodemonConfig": {
     "watch": [
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.2",
     "@types/node": "^20.3.3",
-    "@vitest/coverage-c8": "^0.32.2",
+    "@vitest/coverage-v8": "^0.32.2",
     "nodemon": "^2.0.22",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",

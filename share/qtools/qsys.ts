@@ -1,4 +1,4 @@
-import * as qsys from './qsys.js';
+import * as qsys from './qsys';
 
 export const getCurrentPageIdCode = () => {
 	const url = qsys.getCurrentUrl();

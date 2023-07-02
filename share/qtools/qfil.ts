@@ -1,6 +1,6 @@
 import fs from 'fs';
-import * as qstr from './qstr.js';
-import * as qfil from './qfil.js';
+import * as qstr from './qstr';
+import * as qfil from './qfil';
 
 export const createFile = (pathAndFileName: string, content: string) => {
 	fs.writeFileSync(pathAndFileName, content.trim());

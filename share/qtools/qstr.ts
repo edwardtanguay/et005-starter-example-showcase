@@ -1,8 +1,8 @@
-import * as qsys from './qsys.js';
-import * as qstr from './qstr.js';
+import * as qsys from './qsys';
+import * as qstr from './qstr';
 
 /**
- * REPLACE ALL OCCURANCES IN A STRING:
+ * Replace all occurances in a string:
  *
  * qstr.replaceAll("This is a tost.", "o", "e");
  *
@@ -12,6 +12,13 @@ export const replaceAll = (text: string, search: string, replace: string) => {
 	return text.split(search).join(replace);
 };
 
+/**
+ * Check if a string is empty, undefined, null, etc.
+ * 
+ * if(qstr.empty(text)) {
+ * 
+ * true
+ */
 export const isEmpty = (line: string) => {
 	if (line == undefined || line == null) {
 		return true;
