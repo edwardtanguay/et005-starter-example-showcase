@@ -1,4 +1,4 @@
-import * as qsys from './qtools/qsys';
+import * as qsys from './qtools/qsys.js';
 
 export const getAppTitle = () => {
 	const baseTitle = 'HTML-CSS-JavaScript Showcase';
