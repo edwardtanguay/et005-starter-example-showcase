@@ -82,7 +82,7 @@ export const convertLinesToStringBlock = (lines: string[]) => {
 };
 
 export const convertStringBlockToLines = (stringBlock: string, trimLines = true) => {
-	let roughLines:string[] = [];
+	let roughLines: string[] = [];
 
 	if (tools.isEmpty(stringBlock)) {
 		return [];
@@ -110,7 +110,7 @@ export const isEmpty = (line: string) => {
 };
 
 export const trimAllLinesInLinesArray = (lines: string[]) => {
-	const newLines:string[] = [];
+	const newLines: string[] = [];
 	lines.forEach(function (line) {
 		let newLine = line.trim();
 		newLines.push(newLine);
@@ -130,7 +130,7 @@ export const trimLinesOfEndBlanks = (lines: string[]) => {
 // if first line of lines array is blank, it will remove it
 // but don't remove any blank lines from middle or end
 export const trimBeginningLinesOfBlanks = (lines: string[]) => {
-	const newLines:string[] = [];
+	const newLines: string[] = [];
 	let trimmingBlanks = true;
 	lines.forEach(function (line) {
 		let newLine = line;
@@ -149,10 +149,15 @@ export const NEW_LINE = (numberOfNewLines = 1) => {
 	return endOfLine.repeat(numberOfNewLines);
 };
 
-export const convertSnakeCaseToKebabCase = (text:string) => {
+export const convertSnakeCaseToKebabCase = (text: string) => {
 	return text.replaceAll('_', '-');
 }
 
-export const getTestMessage = () => {
-	return `This is a test message from ${tools.getCurrentEnvironment()}.`;
+export const getAppTitle = () => {
+	const baseTitle = 'HTML-CSS-JavaScript Showcase';
+	if (tools.getCurrentEnvironment() === 'development') {
+		return `${baseTitle} (dev mode)`;
+	} else {
+		return baseTitle;
+	}
 }
