@@ -1,11 +1,12 @@
 import * as config from '../config';
 import * as qsys from '../../share/qtools/qsys';
+import * as qstr from '../../share/qtools/qstr';
 
 export const wrapAsExample = (idCode: string, html: string, description = '') => {
 	const html_description = description.trim() === '' ? '' : `<div class="description">${description}</div>`;
 	const codeUrl = `${config.githubRepositoryUrl}/blob/dev/src/examples/${idCode}.ts`;
 	const stylesUrl = `${config.githubRepositoryUrl}/blob/dev/src/examples/${idCode}.scss`;
-	const permalink = qsys.createUrlCodeFromIdCode(idCode);
+	const permalink = qstr.convertSnakeCaseToKebabCase(idCode);
 	const currentPageIdCode = qsys.getCurrentPageIdCode();
 
 

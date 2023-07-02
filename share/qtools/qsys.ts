@@ -52,10 +52,13 @@ export const getCurrentUrl = () => {
 	}
 }
 
-export const createUrlCodeFromIdCode = (idCode: string) => {
-	return idCode.replaceAll('_', '-');
-}
-
+/**
+ * Returns appropriate newline character, e.g. \n or \r\n
+ * 
+ * r += qsys.NEW_LINE();
+ * 
+ * "\n"
+ */
 export const NEW_LINE = (numberOfNewLines = 1) => {
 	const endOfLine = '\n';
 	return endOfLine.repeat(numberOfNewLines);
