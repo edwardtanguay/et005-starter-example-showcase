@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "run-p backend frontend test",
+    "dev": "run-p backend frontend",
     "backend": "nodemon",
     "frontend": "vite",
     "buildBackend": "tsc -p ./cli/tsconfig.json",

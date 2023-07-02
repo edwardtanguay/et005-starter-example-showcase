@@ -2,7 +2,8 @@ import {getRandomNumberBetween} from "./qmat.js";
 
 describe('getRandomNumberBetween()', () => {
 	it("it returns a number within range", () => {
-		expect(getRandomNumberBetween(1, 10)).toBeGreaterThanOrEqual(1);
-		expect(getRandomNumberBetween(1, 10)).toBeLessThan(10);
+		const min = 1, max = 3;
+		expect(getRandomNumberBetween(min, max)).toBeGreaterThanOrEqual(min);
+		expect(getRandomNumberBetween(min, max)).toBeLessThanOrEqual(max);
 	});
 });

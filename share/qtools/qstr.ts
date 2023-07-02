@@ -30,11 +30,10 @@ export const isEmpty = (line: string) => {
 			return false;
 		}
 	}
-
 };
 
 /**
- * Convert an array of strings to a string with newline characters
+ * Converts an array of strings to a string with newline characters
  * 
  * const content = qstr.convertLinesToStringBlock(lines);
  * 
@@ -53,6 +52,13 @@ export const convertLinesToStringBlock = (lines: string[]) => {
 	return r;
 };
 
+/**
+ * Converts a string with newline characters to an array of strings, one per line 
+ * 
+ * const lines: string[] = qstr.convertStringBlockToLines(content);
+ * 
+ * ['line1', 'line2', 'line3']
+ */
 export const convertStringBlockToLines = (stringBlock: string, trimLines = true) => {
 	let roughLines: string[] = [];
 
@@ -63,10 +69,19 @@ export const convertStringBlockToLines = (stringBlock: string, trimLines = true)
 	if (trimLines) {
 		roughLines = qstr.trimAllLinesInLinesArray(roughLines);
 	}
-	roughLines = qstr.trimLinesOfEndBlanks(roughLines);
+	roughLines = qstr.removeEmptyLinesFromLinesAtBeginningAndEnd(roughLines);
 	return roughLines;
 };
 
+/**
+ * Trims every string in a string array
+ * 
+ * roughLines = ['line1  ', 'line2'];
+ * roughLines = qstr.trimAllLinesInLinesArray(roughLines);
+ * 
+ * ['line1','line2']
+ */
+// 
 export const trimAllLinesInLinesArray = (lines: string[]) => {
 	const newLines: string[] = [];
 	lines.forEach(function (line) {
@@ -76,8 +91,17 @@ export const trimAllLinesInLinesArray = (lines: string[]) => {
 	return newLines;
 };
 
-// returns a lines array that has front and end blank strings, as one without these blanks
-export const trimLinesOfEndBlanks = (lines: string[]) => {
+/**
+ * Removes blank strings from the beginning and end of a string of arrays
+ * 
+ * roughLines = ['', 'line1', 'line2', ''];
+ * roughLines = qstr.removeEmptyLinesFromLinesAtBeginningAndEnd(roughLines);
+ * 
+ * ['line1','line2']
+ */
+// 
+export const removeEmptyLinesFromLinesAtBeginningAndEnd = (lines: string[]) => {
+	lines = qstr.trimAllLinesInLinesArray(lines);
 	lines = qstr.trimBeginningLinesOfBlanks(lines);
 	lines = lines.reverse();
 	lines = qstr.trimBeginningLinesOfBlanks(lines);

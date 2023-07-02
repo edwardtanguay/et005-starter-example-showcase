@@ -1,4 +1,4 @@
-import { replaceAll, isEmpty, convertLinesToStringBlock } from "./qstr";
+import { replaceAll, isEmpty, convertLinesToStringBlock, convertStringBlockToLines, trimAllLinesInLinesArray, removeEmptyLinesFromLinesAtBeginningAndEnd } from "./qstr";
 
 describe('replaceAll()', () => {
 	it("it can replace characters correctly", () => {
@@ -30,3 +30,32 @@ describe('convertLinesToStringBlock()', () => {
 		expect(convertLinesToStringBlock(lines)).toBe('line1');
 	});
 });
+
+describe('convertStringBlockToLines()', () => {
+	it("it converts string to an array of strings correctly", () => {
+		const content = 'line1\nline2\nline3';
+		const lines = ['line1', 'line2', 'line3'];
+		expect(convertStringBlockToLines(content)).toStrictEqual(lines);
+	});
+});
+
+describe('trimAllLinesInLinesArray()', () => {
+	it("it trims all lines correctly", () => {
+		const lines = ['line1   ', 'line2', '  line3'];
+		const trimmedLines = ['line1', 'line2', 'line3'];
+		expect(trimAllLinesInLinesArray(lines)).toStrictEqual(trimmedLines);
+	});
+});
+
+describe('removeEmptyLinesFromLinesAtBeginningAndEnd()', () => {
+	it("it removes blank strings at beginning and end of a string array", () => {
+		const lines = ['', 'line1', 'line2', 'line3', '', '  '];
+		const trimmedLines = ['line1', 'line2', 'line3'];
+		expect(removeEmptyLinesFromLinesAtBeginningAndEnd(lines)).toStrictEqual(trimmedLines);
+	});
+});
+
+
+
+
+
