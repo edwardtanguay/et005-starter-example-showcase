@@ -1,12 +1,12 @@
 import * as config from '../config';
-import * as tools from '../../share/tools';
+import * as qsys from '../../share/qtools/qsys';
 
 export const wrapAsExample = (idCode: string, html: string, description = '') => {
 	const html_description = description.trim() === '' ? '' : `<div class="description">${description}</div>`;
 	const codeUrl = `${config.githubRepositoryUrl}/blob/dev/src/examples/${idCode}.ts`;
 	const stylesUrl = `${config.githubRepositoryUrl}/blob/dev/src/examples/${idCode}.scss`;
-	const permalink = tools.createUrlCodeFromIdCode(idCode);
-	const currentPageIdCode = tools.getCurrentPageIdCode();
+	const permalink = qsys.createUrlCodeFromIdCode(idCode);
+	const currentPageIdCode = qsys.getCurrentPageIdCode();
 
 
 	return /* html */ `

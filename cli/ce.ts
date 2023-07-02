@@ -1,4 +1,5 @@
-import * as tools from '../share/tools.js';
+import * as qstr from '../share/qtools/qstr';
+import * as qfil from '../share/qtools/qfil';
 
 const idCodeSnakeCase = process.argv[2];
 
@@ -12,10 +13,10 @@ if (idCodeSnakeCase === undefined) {
 	console.log('/scr/examples/example_animated_dropdown.scss');
 	process.exit();
 } else {
-	const idCodeKebabCase = tools.convertSnakeCaseToKebabCase(idCodeSnakeCase);
+	const idCodeKebabCase = qstr.convertSnakeCaseToKebabCase(idCodeSnakeCase);
 
 	// create code file
-	tools.createFile(`./src/examples/${idCodeSnakeCase}.ts`, `
+	qfil.createFile(`./src/examples/${idCodeSnakeCase}.ts`, `
 import './${idCodeSnakeCase}.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 
@@ -31,7 +32,7 @@ export const ${idCodeSnakeCase} = () => {
 	`);
 
 	// create style file
-	tools.createFile(`./src/examples/${idCodeSnakeCase}.scss`, `
+	qfil.createFile(`./src/examples/${idCodeSnakeCase}.scss`, `
 .${idCodeSnakeCase} {
 	.ball {
 		width: 9rem;
@@ -49,8 +50,8 @@ export const ${idCodeSnakeCase} = () => {
 
 	// register component in main.ts
 	;
-	tools.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCodeSnakeCase} } from './examples/${idCodeSnakeCase}';`);
-	tools.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{displayComponent(${idCodeSnakeCase}, '${idCodeKebabCase}')\}`);
+	qfil.addLineInFile(`./src/main.ts`, '@@FIRSTLINE', `import { ${idCodeSnakeCase} } from './examples/${idCodeSnakeCase}';`);
+	qfil.addLineInFile(`./src/main.ts`, 'class="examples"', `\$\{displayComponent(${idCodeSnakeCase}, '${idCodeKebabCase}')\}`);
 
 	// ${displayComponent(example_test, 'example-test')}
 }

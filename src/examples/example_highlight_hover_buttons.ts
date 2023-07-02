@@ -1,13 +1,14 @@
 import './example_highlight_hover_buttons.scss';
 import { wrapAsExample } from '../components/wrapAsExample';
 import _icons from '../data/icons.json';
-import * as tools from '../../share/tools';
+import * as qarr from '../../share/qtools/qarr';
+import * as qmat from '../../share/qtools/qmat';
 
 const description = '';
 
 let icons = _icons;
-tools.shuffle(icons);
-const newLength = tools.getRandomNumberBetween(3, icons.length);
+qarr.shuffle(icons);
+const newLength = qmat.getRandomNumberBetween(3, icons.length);
 icons = _icons.slice(0, newLength);
 
 
