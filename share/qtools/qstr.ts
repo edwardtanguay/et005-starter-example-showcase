@@ -33,6 +33,13 @@ export const isEmpty = (line: string) => {
 
 };
 
+/**
+ * Convert an array of strings to a string with newline characters
+ * 
+ * const content = qstr.convertLinesToStringBlock(lines);
+ * 
+ * "line1\nline2\nline3"
+ */
 export const convertLinesToStringBlock = (lines: string[]) => {
 	let r = '';
 	let index = 0;
