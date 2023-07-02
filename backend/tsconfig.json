@@ -4,8 +4,8 @@
 		"moduleResolution": "Node",
 		"target": "es2022",
 		"sourceMap": true,
-		"outDir": "../distBackend",
+		"outDir": "../dist",
 		"resolveJsonModule": true
 	},
-	"include": ["../cli", "../share"]
+	"include": ["../backend", "../share"]
 }

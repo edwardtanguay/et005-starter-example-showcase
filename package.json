@@ -6,16 +6,16 @@
     "dev": "run-p backend frontend",
     "backend": "nodemon",
     "frontend": "vite",
-    "buildBackend": "tsc -p ./cli/tsconfig.json",
+    "buildBackend": "tsc -p ./backend/tsconfig.json",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "ce": "node distBackend/cli/ce.js",
+    "ce": "node dist/backend/ce.js",
     "test": "vitest --ui",
     "testcov": "vitest --coverage"
   },
   "nodemonConfig": {
     "watch": [
-      "cli"
+      "backend"
     ],
     "ext": "ts",
     "exec": "npm run buildBackend"

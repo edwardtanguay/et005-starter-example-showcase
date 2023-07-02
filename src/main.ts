@@ -24,8 +24,8 @@ const displayComponent = (component: () => void, idCode: string) => {
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 <header>
-	<h1>${apptools.getAppTitle()}</h1>
-	<div class="version">Version ${appconfig.version}</div>
+<h1>${apptools.getAppTitle()}</h1>
+<div class="version">Version ${appconfig.version}</div>
 </header>
 ${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : ''}
 <div class="examples">
