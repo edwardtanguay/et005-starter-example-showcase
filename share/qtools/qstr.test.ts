@@ -1,4 +1,4 @@
-import { replaceAll, isEmpty, convertLinesToStringBlock, convertStringBlockToLines, trimAllLinesInLinesArray, removeEmptyLinesFromLinesAtBeginningAndEnd } from "./qstr";
+import { replaceAll, isEmpty, convertLinesToStringBlock, convertStringBlockToLines, trimAllLinesInLinesArray, removeEmptyLinesFromLinesAtBeginningAndEnd, removeBlankLinesFromBeginning, convertSnakeCaseToKebabCase } from "./qstr";
 
 describe('replaceAll()', () => {
 	it("it can replace characters correctly", () => {
@@ -17,6 +17,12 @@ describe('isEmpty()', () => {
 	});
 	it("it identifies text as not empty", () => {
 		expect(isEmpty('this is a test')).toBe(false);
+	});
+	it("it identifies undefined as empty", () => {
+		expect(isEmpty(undefined)).toBe(true);
+	});
+	it("it identifies null as empty", () => {
+		expect(isEmpty(null)).toBe(true);
 	});
 });
 
@@ -37,6 +43,11 @@ describe('convertStringBlockToLines()', () => {
 		const lines = ['line1', 'line2', 'line3'];
 		expect(convertStringBlockToLines(content)).toStrictEqual(lines);
 	});
+	it("it works if string block is empty", () => {
+		const content = '';
+		const lines = [];
+		expect(convertStringBlockToLines(content)).toStrictEqual(lines);
+	});
 });
 
 describe('trimAllLinesInLinesArray()', () => {
@@ -55,7 +66,16 @@ describe('removeEmptyLinesFromLinesAtBeginningAndEnd()', () => {
 	});
 });
 
+describe('removeBlankLinesFromBeginning()', () => {
+	it("it removes blank strings from beginning of a string array", () => {
+		const lines = ['', 'line1', 'line2', 'line3', '', '  '];
+		const trimmedLines = ['line1', 'line2', 'line3', '', '  '];
+		expect(removeBlankLinesFromBeginning(lines)).toStrictEqual(trimmedLines);
+	});
+});
 
-
-
-
+describe('convertSnakeCaseToKebabCase()', () => {
+	it("it converts successfully", () => {
+		expect(convertSnakeCaseToKebabCase('general_item_001')).toBe('general-item-001');
+	});
+});

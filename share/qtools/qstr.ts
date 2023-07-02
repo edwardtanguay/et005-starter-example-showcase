@@ -19,8 +19,8 @@ export const replaceAll = (text: string, search: string, replace: string) => {
  * 
  * true
  */
-export const isEmpty = (line: string) => {
-	if (line == undefined || line == null) {
+export const isEmpty = (line: string | undefined | null) => {
+	if (line === undefined || line === null) {
 		return true;
 	} else {
 		line = line.toString();
@@ -77,6 +77,7 @@ export const convertStringBlockToLines = (stringBlock: string, trimLines = true)
  * Trims every string in a string array
  * 
  * roughLines = ['line1  ', 'line2'];
+ * 
  * roughLines = qstr.trimAllLinesInLinesArray(roughLines);
  * 
  * ['line1','line2']
@@ -95,6 +96,7 @@ export const trimAllLinesInLinesArray = (lines: string[]) => {
  * Removes blank strings from the beginning and end of a string of arrays
  * 
  * roughLines = ['', 'line1', 'line2', ''];
+ * 
  * roughLines = qstr.removeEmptyLinesFromLinesAtBeginningAndEnd(roughLines);
  * 
  * ['line1','line2']
@@ -102,16 +104,24 @@ export const trimAllLinesInLinesArray = (lines: string[]) => {
 // 
 export const removeEmptyLinesFromLinesAtBeginningAndEnd = (lines: string[]) => {
 	lines = qstr.trimAllLinesInLinesArray(lines);
-	lines = qstr.trimBeginningLinesOfBlanks(lines);
+	lines = qstr.removeBlankLinesFromBeginning(lines);
 	lines = lines.reverse();
-	lines = qstr.trimBeginningLinesOfBlanks(lines);
+	lines = qstr.removeBlankLinesFromBeginning(lines);
 	lines = lines.reverse();
 	return lines;
 };
 
-// if first line of lines array is blank, it will remove it
-// but don't remove any blank lines from middle or end
-export const trimBeginningLinesOfBlanks = (lines: string[]) => {
+/**
+ * Removes blank strings from the beginning of a string of arrays
+ * 
+ * roughLines = ['', 'line1', 'line2'];
+ * 
+ * roughLines = qstr.removeBlankLinesFromBeginning(roughLines);
+ * 
+ * ['line1','line2']
+ */
+// 
+export const removeBlankLinesFromBeginning = (lines: string[]) => {
 	const newLines: string[] = [];
 	let trimmingBlanks = true;
 	lines.forEach(function (line) {
@@ -126,6 +136,15 @@ export const trimBeginningLinesOfBlanks = (lines: string[]) => {
 	return newLines;
 };
 
+/**
+ * Replaces underscores with hyphens 
+ * 
+ * const idCodeSnakeCase = 'general_item_003';
+ * 
+ * const idCodeKebabCase = qstr.convertSnakeCaseToKebabCase(idCodeSnakeCase);
+ * 
+ * 'general-item-003'
+ */
 export const convertSnakeCaseToKebabCase = (text: string) => {
 	return qstr.replaceAll(text, '_', '-');
 }

@@ -1,5 +1,14 @@
 import * as qsys from './qsys';
 
+/**
+ * Returns the last segment on the right in the URL
+ * 
+ * url = "http://localhost:3423/info"
+ * 
+ * const currentPageIdCode = qsys.getCurrentPageIdCode();
+ * 
+ * "info"
+ */
 export const getCurrentPageIdCode = () => {
 	const url = qsys.getCurrentUrl();
 	if (url) {
@@ -10,6 +19,13 @@ export const getCurrentPageIdCode = () => {
 	}
 }
 
+/**
+ * Returns either "development" or "environment"
+ * 
+ * if (qsys.getCurrentEnvironment() === 'development') {
+ * 
+ * true
+ */
 export const getCurrentEnvironment = () => {
 	const currentUrl = qsys.getCurrentUrl();
 	if (currentUrl.includes('//localhost') || currentUrl.includes('//127.0.0.1')) {
@@ -19,6 +35,15 @@ export const getCurrentEnvironment = () => {
 	}
 }
 
+/**
+ * Returns the current browser URL
+ *
+ * url = "http://localhost:3423/info"
+ * 
+ * const url = qsys.getCurrentUrl();
+ * 
+ * "http://localhost:3423/info"
+ */
 export const getCurrentUrl = () => {
 	if (typeof window !== "undefined") {
 		return window.location.href;
