@@ -21,8 +21,12 @@ describe('isEmpty()', () => {
 });
 
 describe('convertLinesToStringBlock()', () => {
-	it("it identifies text as not empty", () => {
+	it("it converts array to string correctly", () => {
 		const lines = ['line1', 'line2', 'line3'];
 		expect(convertLinesToStringBlock(lines)).toBe('line1\nline2\nline3');
+	});
+	it("it works with one array string", () => {
+		const lines = ['line1'];
+		expect(convertLinesToStringBlock(lines)).toBe('line1');
 	});
 });
