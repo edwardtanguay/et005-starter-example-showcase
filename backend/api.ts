@@ -12,7 +12,7 @@ app.use(express.json());
 // app.use('/nn', baseRouter);
 
 app.get('/', (req: express.Request, res: express.Response) => {
-	res.send('nnn2345');
+	res.send('nnn23456');
 });
 
 app.listen(port, () => {
