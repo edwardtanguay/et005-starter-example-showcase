@@ -1,7 +1,8 @@
 import * as qsys from './qtools/qsys.js';
+import appconfig from './appconfig.json';
 
 export const getAppTitle = () => {
-	const baseTitle = 'HTML-CSS-JavaScript Showcase';
+	const baseTitle = appconfig.title;
 	if (qsys.getCurrentEnvironment() === 'development') {
 		return `${baseTitle} (dev mode)`;
 	} else {

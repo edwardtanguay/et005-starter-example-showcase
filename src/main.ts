@@ -4,6 +4,8 @@ import { example_blue_ball } from './examples/example_blue_ball';
 import { example_german_states } from './examples/example_german_states';
 import './styles/main.scss';
 import * as qsys from '../share/qtools/qsys';
+import appconfig from '../share/appconfig.json';
+
 import * as apptools from '../share/apptools';
 
 const currentPageIdCode = qsys.getCurrentPageIdCode();
@@ -23,7 +25,7 @@ const displayComponent = (component: () => void, idCode: string) => {
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 <header>
 	<h1>${apptools.getAppTitle()}</h1>
-	<div class="version">Version 2.3</div>
+	<div class="version">Version ${appconfig.version}</div>
 </header>
 ${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : ''}
 <div class="examples">
