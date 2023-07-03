@@ -1,0 +1,3 @@
+the new first line
+nnn
+line that was added

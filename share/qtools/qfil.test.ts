@@ -1,6 +1,6 @@
 import {addLineInFile, createFile} from "./qfil.js";
 
-const testPathAndFileName = './distBackend/test222.txt';
+const testPathAndFileName = './testing/test222.txt';
 
 describe('createFile()', () => {
 	it("function exists and executes without errors", () => {
