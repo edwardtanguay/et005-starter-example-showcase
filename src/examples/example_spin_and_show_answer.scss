@@ -1,0 +1,40 @@
+$box_color: darkgreen;
+
+.example_spin_and_show_answer {
+
+	div.boxes {
+		display: flex;
+		gap: 1rem;
+	}
+	
+	div.box {
+		width: 100px;
+		height: 100px;
+		background-color: $box_color;
+		display: grid;
+		place-items: center;
+		transform: rotate(270deg);
+		color: $box_color;
+		border-radius: .5rem;
+	}
+
+	div.box:hover {
+		animation-name: spinit;
+		animation-duration: .3s;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes spinit {
+		from {
+			background-color: $box_color;
+			transform: rotate(270deg);
+			color: $box_color;
+		}
+
+		to {
+			background-color: rgb(150, 150, 51);
+			transform: rotate(360deg);
+			color: black;
+		}
+	}
+}

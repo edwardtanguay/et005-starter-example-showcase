@@ -1,3 +1,4 @@
+import { example_spin_and_show_answer } from './examples/example_spin_and_show_answer';
 import { example_highlight_hover_buttons } from './examples/example_highlight_hover_buttons';
 import { example_random_german_noun_flashcard } from './examples/example_random_german_noun_flashcard';
 import { example_blue_ball } from './examples/example_blue_ball';
@@ -29,6 +30,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML =/* html */`
 </header>
 ${currentPageIdCode !== '' ? '<a href="/"><button class="btnBackToHome">Display all examples</button></a>' : ''}
 <div class="examples">
+${displayComponent(example_spin_and_show_answer, 'example-spin-and-show-answer')}
 ${displayComponent(example_highlight_hover_buttons, 'example-highlight-hover-buttons')}
 ${displayComponent(example_random_german_noun_flashcard, 'example-random-german-noun-flashcard')}
 ${displayComponent(example_german_states, 'example-german-states')}

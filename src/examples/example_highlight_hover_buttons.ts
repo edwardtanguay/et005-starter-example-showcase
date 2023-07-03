@@ -11,8 +11,6 @@ qarr.shuffle(icons);
 const newLength = qmat.getRandomNumberBetween(3, icons.length);
 icons = _icons.slice(0, newLength);
 
-
-
 export const example_highlight_hover_buttons = () => {
 	let html = '';
 	html += `<section class="buttons-container">`;
