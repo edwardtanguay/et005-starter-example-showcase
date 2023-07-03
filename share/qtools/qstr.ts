@@ -146,5 +146,5 @@ export const removeBlankLinesFromBeginning = (lines: string[]) => {
  * 'general-item-003'
  */
 export const convertSnakeCaseToKebabCase = (text: string) => {
-	return qstr.replaceAll(text, '_', '-');
+	return qstr.replaceAll(text, '_', '--');
 }
