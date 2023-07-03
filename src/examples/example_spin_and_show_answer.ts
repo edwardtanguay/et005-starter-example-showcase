@@ -7,7 +7,6 @@ const description = '';
 const fruits = ['apple', 'banana', 'orange'];
 qarr.shuffle(fruits);
 
-
 export const example_spin_and_show_answer = () => {
 	let html = '';
 	html += `<div class="boxes">`;
